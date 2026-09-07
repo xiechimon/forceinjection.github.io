@@ -2112,6 +2112,10 @@
     "url": "/21_openspec_practise/docs-en/openspec-user-manual.html"
   },
   {
+    "title": "Focusing Delta Review on What Actually Changed: OpenSpec v1.11.0 Workflow Practice",
+    "url": "/21_openspec_practise/docs-en/openspec-v1.11.0-workflow-practice.html"
+  },
+  {
     "title": "From Hardcoded to Dynamic Instructions: The Three Major Changes in OpenSpec v1.5.0",
     "url": "/21_openspec_practise/docs-en/openspec-v1.5.0-upgrade.html"
   },
@@ -2130,6 +2134,10 @@
   {
     "title": "OpenSpec 使用手册",
     "url": "/21_openspec_practise/docs/openspec-user-manual.html"
+  },
+  {
+    "title": "让 delta 评审聚焦真正的变化：OpenSpec v1.11.0 工作流实践",
+    "url": "/21_openspec_practise/docs/openspec-v1.11.0-workflow-practice.html"
   },
   {
     "title": "从硬编码到动态指令：OpenSpec v1.5.0 的三大变革",
@@ -2208,6 +2216,22 @@
     "url": "/21_openspec_practise/openspec/changes/archive/2026-07-28-add-product-search/tasks.html"
   },
   {
+    "title": "design",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-02-cart-query-and-remove/design.html"
+  },
+  {
+    "title": "proposal",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-02-cart-query-and-remove/proposal.html"
+  },
+  {
+    "title": "spec",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-02-cart-query-and-remove/specs/cart-management/spec.html"
+  },
+  {
+    "title": "tasks",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-02-cart-query-and-remove/tasks.html"
+  },
+  {
     "title": "Cart Management Specification",
     "url": "/21_openspec_practise/openspec/specs/cart-management/spec.html"
   },
@@ -2284,6 +2308,10 @@
     "url": "/99_misc/token_factory_talk/"
   },
   {
+    "title": "Token 工厂的产能怎么算？ — 从\"一天最多卖多少 token\"到\"用户凭什么不退订\"",
+    "url": "/99_misc/token_factory_talk/cluster-capacity-measurement.html"
+  },
+  {
     "title": "《Token Factory: AI 推理的成本革命》演讲提纲（可排练版）",
     "url": "/99_misc/token_factory_talk/outline.html"
   },
@@ -2314,6 +2342,30 @@
   {
     "title": "TokenFactory（词元工厂）技术与产业发展白皮书 2026",
     "url": "/99_misc/token_factory_talk/references/07-tokenfactory-whitepaper-2026.html"
+  },
+  {
+    "title": "素材：Hugging Face《State of Open Models: Summer 2026 Observations》——模型能力信号与 Agent 流量",
+    "url": "/99_misc/token_factory_talk/references/08-hf-open-models-summer-2026.html"
+  },
+  {
+    "title": "素材：模型性价比跃迁——GLM-5.3-Flash 与 Qwen3.8-Flash 同日双发",
+    "url": "/99_misc/token_factory_talk/references/09-model-price-performance.html"
+  },
+  {
+    "title": "素材：集群产能评估框架——一天最多卖多少 token，用户凭什么不退订",
+    "url": "/99_misc/token_factory_talk/references/10-cluster-capacity-assessment.html"
+  },
+  {
+    "title": "素材：模型选型对产能的影响——以 DeepSeek V4 Pro vs Flash 为例",
+    "url": "/99_misc/token_factory_talk/references/11-parameter-vs-throughput.html"
+  },
+  {
+    "title": "素材：Silicon Data LLM Token 支出指数——全市场平均支付价跌破 1 美元",
+    "url": "/99_misc/token_factory_talk/references/12-silicon-data-token-index.html"
+  },
+  {
+    "title": "《Token Factory：AI 推理的成本革命》图文讲解",
+    "url": "/99_misc/token_factory_talk/talk-illustrated.html"
   },
   {
     "title": "CLAUDE.md",
