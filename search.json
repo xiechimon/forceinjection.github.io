@@ -748,6 +748,10 @@
     "url": "/05_model_training_and_fine_tuning/ai_ops_design/kubernetes_model_evaluation_framework.html"
   },
   {
+    "title": "训练不稳，可能是推理引擎的锅：Miles 的三条对齐路线",
+    "url": "/05_model_training_and_fine_tuning/rl_training/miles-train-rollout-alignment.html"
+  },
+  {
     "title": "SFT 微调实战与指南",
     "url": "/05_model_training_and_fine_tuning/sft_example/"
   },
@@ -870,6 +874,10 @@
   {
     "title": "Scaling Laws——参数、数据、算力的三角博弈",
     "url": "/06_llm_theory_and_fundamentals/llm_basic_concepts/scaling_laws/scaling_laws.html"
+  },
+  {
+    "title": "把轨迹当状态：推理时间 Scaling 的一个新维度",
+    "url": "/06_llm_theory_and_fundamentals/llm_basic_concepts/scaling_laws/test_time_scaling.html"
   },
   {
     "title": "LLM Token 技术指南",
@@ -1050,6 +1058,10 @@
   {
     "title": "深度解析 Kagent：从零打造 Kubernetes 运维智能体",
     "url": "/08_agentic_system/agent_infra/docs/deep-dive-kagent-k8s-ops-agent.html"
+  },
+  {
+    "title": "一切皆插件：DeepSeek Harness 是怎么把 Agent 装起来的",
+    "url": "/08_agentic_system/agent_infra/docs/deepseek-harness-deep-dive.html"
   },
   {
     "title": "DeepSeek-TUI 实战：榨干 DeepSeek V4 长上下文红利的命令行编程 Agent 实战指南",
@@ -1240,6 +1252,14 @@
     "url": "/09_inference_system/"
   },
   {
+    "title": "当 Agent 流量成为推理系统的主要负载",
+    "url": "/09_inference_system/agent_serving/agent-workload-serving.html"
+  },
+  {
+    "title": "约束解码的性能账单：vLLM 与 SGLang 的结构化输出实现拆解",
+    "url": "/09_inference_system/agent_serving/constrained-decoding-engines.html"
+  },
+  {
     "title": "推理成本分析",
     "url": "/09_inference_system/cost_analysis/"
   },
@@ -1372,8 +1392,16 @@
     "url": "/09_inference_system/cost_analysis/llm_api_pricing_analysis.html"
   },
   {
+    "title": "把 KV Cache 压缩推到极限：DeepSeek-V4.1-Flash 技术报告精读",
+    "url": "/09_inference_system/deepseek-v41-flash-kv-compression.html"
+  },
+  {
     "title": "模型部署实战",
     "url": "/09_inference_system/deployment/"
+  },
+  {
+    "title": "B300 上的模型部署与 KV Cache：官方手册最佳实践",
+    "url": "/09_inference_system/deployment/b300-deployment-and-kv-cache.html"
   },
   {
     "title": "DeepSeek-V3 H20 推理优化：基于 vLLM 源码的深度分析",
@@ -1386,6 +1414,10 @@
   {
     "title": "Qwen2-VL-7B-Instruct 昇腾部署指南",
     "url": "/09_inference_system/deployment/qwen2_vl_7b_huawei.html"
+  },
+  {
+    "title": "HBF 是 HBM 的替代吗？单位存储便宜了，Token 成本却可能更高",
+    "url": "/09_inference_system/hbf-vs-hbm.html"
   },
   {
     "title": "KV Cache 技术体系",
@@ -1432,6 +1464,10 @@
     "url": "/09_inference_system/kv_cache/01_concepts/compression/kv_cache_quantization.html"
   },
   {
+    "title": "把 14B 的 KV 交给 32B：跨模型复用的可能与代价",
+    "url": "/09_inference_system/kv_cache/01_concepts/cross_model/cross_model_kv_transfer.html"
+  },
+  {
     "title": "KV Cache 淘汰策略：从滑动窗口到注意力引导的精确淘汰",
     "url": "/09_inference_system/kv_cache/01_concepts/eviction/attention_sinks_and_eviction.html"
   },
@@ -1462,6 +1498,10 @@
   {
     "title": "PD 分离架构下的 KV Cache 传输：Push 还是 Pull？算完再传还是边算边传？",
     "url": "/09_inference_system/kv_cache/01_concepts/pd_transfer/01_disaggregated_prefill_kv_transfer.html"
+  },
+  {
+    "title": "压缩、重叠、复用、隔离：PD 状态交接优化的四条轴",
+    "url": "/09_inference_system/kv_cache/01_concepts/pd_transfer/02-pd-state-handoff-optimization-map.html"
   },
   {
     "title": "Claude 提示词缓存机制与源码实现深度分析",
@@ -1566,6 +1606,26 @@
   {
     "title": "Tair KVCache 架构与设计深度分析",
     "url": "/09_inference_system/kv_cache/02_systems/tair_kvcache/tair-kvcache-architecture-design.html"
+  },
+  {
+    "title": "线性注意力与推理系统",
+    "url": "/09_inference_system/linear_attention/"
+  },
+  {
+    "title": "KDA 机制拆解：从 DeltaNet 到通道级门控",
+    "url": "/09_inference_system/linear_attention/01-kda-mechanism.html"
+  },
+  {
+    "title": "chunkwise 串行 prefill 的调度：两个「串行」要分清",
+    "url": "/09_inference_system/linear_attention/02-chunkwise-scheduling.html"
+  },
+  {
+    "title": "状态语义深水区：rollback、fork、重放一致性、TP 状态",
+    "url": "/09_inference_system/linear_attention/03-state-semantics.html"
+  },
+  {
+    "title": "没有 KV Cache 的模型：delta-rule 线性注意力的推理挑战",
+    "url": "/09_inference_system/linear_attention/linear-attention-serving.html"
   },
   {
     "title": "LLM 推理显存估算",
@@ -2064,6 +2124,22 @@
     "url": "/11_ai_native_everything/"
   },
   {
+    "title": "模型不稀缺了，稀缺的是把模型塞进业务的人",
+    "url": "/11_ai_native_everything/fde/forward-deployed-engineer.html"
+  },
+  {
+    "title": "源笔记 01 · 腾讯研究院《FDE模式行业观察与实践》",
+    "url": "/11_ai_native_everything/fde/references/01-腾讯研究院-FDE模式行业观察与实践.html"
+  },
+  {
+    "title": "源笔记 02 · 范冰《前线部署工程师（FDE）》",
+    "url": "/11_ai_native_everything/fde/references/02-范冰-FDE开源手册.html"
+  },
+  {
+    "title": "源笔记 03 · Jove Zhong《我在 AI 异世界重生为 FDE》",
+    "url": "/11_ai_native_everything/fde/references/03-Jove-北美AI-Agent公司一线实录.html"
+  },
+  {
     "title": "Agent Skills (AI 技能)",
     "url": "/20_agent_skills/"
   },
@@ -2116,6 +2192,10 @@
     "url": "/21_openspec_practise/docs-en/openspec-v1.11.0-workflow-practice.html"
   },
   {
+    "title": "Closing Off Silent Failures: OpenSpec v1.13.0 Workflow Practice",
+    "url": "/21_openspec_practise/docs-en/openspec-v1.13.0-workflow-practice.html"
+  },
+  {
     "title": "From Hardcoded to Dynamic Instructions: The Three Major Changes in OpenSpec v1.5.0",
     "url": "/21_openspec_practise/docs-en/openspec-v1.5.0-upgrade.html"
   },
@@ -2138,6 +2218,10 @@
   {
     "title": "让 delta 评审聚焦真正的变化：OpenSpec v1.11.0 工作流实践",
     "url": "/21_openspec_practise/docs/openspec-v1.11.0-workflow-practice.html"
+  },
+  {
+    "title": "把静默失败堵死：OpenSpec v1.13.0 工作流实践",
+    "url": "/21_openspec_practise/docs/openspec-v1.13.0-workflow-practice.html"
   },
   {
     "title": "从硬编码到动态指令：OpenSpec v1.5.0 的三大变革",
@@ -2230,6 +2314,22 @@
   {
     "title": "tasks",
     "url": "/21_openspec_practise/openspec/changes/archive/2026-09-02-cart-query-and-remove/tasks.html"
+  },
+  {
+    "title": "design",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-10-order-list-query/design.html"
+  },
+  {
+    "title": "proposal",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-10-order-list-query/proposal.html"
+  },
+  {
+    "title": "spec",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-10-order-list-query/specs/order-management/spec.html"
+  },
+  {
+    "title": "tasks",
+    "url": "/21_openspec_practise/openspec/changes/archive/2026-09-10-order-list-query/tasks.html"
   },
   {
     "title": "Cart Management Specification",

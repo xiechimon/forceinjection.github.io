@@ -7,6 +7,16 @@
 ---
 
 > **前瞻**：DeepSeek-V4 和 Kimi K3 从架构层面对 attention 做了根本性改造，KV Cache 从 250GB 降到 5GB，旧叙事终结。但新架构带来了新的系统挑战。详见 **[当百万 Token KV Cache 从 250GB 降到 5GB](post-kv-cache-era-challenges.md)**（对照 vLLM/SGLang 源码 ✓，含 39 处代码验证）。
+>
+> **续篇 · KV 压缩推到极限**：一个月后 DeepSeek 发布 V4.1-Flash，全局 KV 再压到 1/4、持久化压到 1/8，并推翻了前篇三处判断（跨层共享「无意义」、跨类型前缀缓存「未解决」、mHC 迭代「无法被 kernel fusion 覆盖」）。详见 **[把 KV Cache 压缩推到极限：DeepSeek-V4.1-Flash 技术报告精读](deepseek-v41-flash-kv-compression.md)**（报告 §章节 + 官方 `config.json` 双向核对）。
+>
+> **新负载**：Agent 流量正在取代 Chat 成为主要负载——KV 生命周期错配、调度语义失真、会话粘性、容量公式失效四个连锁问题，以及两引擎源码级现状与「保留 vs 重算」的系数变化。详见 **[当 Agent 流量成为推理系统的主要负载](agent_serving/agent-workload-serving.md)**（vLLM `43d691ec6b` / SGLang `f7101b0ae6` 源码验证）。
+>
+> **输出合法性税**：同系列姊妹篇——[约束解码的性能账单：vLLM 与 SGLang 的结构化输出实现拆解](agent_serving/constrained-decoding-engines.md)，编译/每步/交互三笔账单 + 双引擎逐项对照 + jump-forward 重分词差异。
+>
+> **线性注意力**：没有 KV Cache 的模型来了——delta-rule 一脉（KDA/Gated DeltaNet，Qwen3-Next 与 Kimi K3 都在其中）落地后，prefill 串行化、前缀缓存重写为状态检查点、状态池成硬并发上限。系列入口：[线性注意力与推理系统](linear_attention/README.md)（总览 + 机制/调度/状态语义三篇深挖）。
+>
+> **内存介质**：算法把每步读取压下去之后，介质本身成了下一个变量。Hot Chips 2026 上 OXMIQ 用一套 (β, α) 坐标系和一行 `max()` 公式回答「HBF 是不是便宜的 HBM」——容量便宜 8–16 倍，但单位容量带宽只有 HBM 的 1/25，折算成带宽单价反而贵 1.7 倍，结论是它只在一个很窄的低带宽区间里划算。详见 **[HBF 是 HBM 的替代吗：单位存储便宜了，Token 成本却可能更高](hbf-vs-hbm.md)**（22 页幻灯片逐页核对 + 独立报道交叉验证，含一份 2026-08 的反方实测）。
 
 ---
 
@@ -14,9 +24,9 @@
 
 在讨论任何优化之前，先理解推理的两阶段（Prefill/Decode）、KV Cache 为什么存在、以及并行策略如何把大模型塞进多张 GPU。
 
-- **[KV Cache 技术体系](kv_cache/README.md)** — 42 篇文章，从 KV Cache 基础到分布式管理的完整导航。
+- **[KV Cache 技术体系](kv_cache/README.md)** — 44 篇文章，从 KV Cache 基础到分布式管理的完整导航。
   - 基础：KV Cache 原理、PagedAttention、五种注意力存储格式
-  - 优化：Prefix Caching、压缩量化、淘汰策略、Chunked Prefill、PD 分离传输、Prefetching、CUDA Graph
+  - 优化：Prefix Caching、跨模型复用、压缩量化、淘汰策略、Chunked Prefill、PD 分离传输、Prefetching、CUDA Graph
   - 系统：LMCache、Mooncake、KVBM、HiCache、Tair KVCache
   - 容量：GLM-5 推演、ROI 评估
 - **[Prefill 与 Decode 深度拆解](prefill_decode/prefill_decode_qkv_calculation.md)**（[交互可视化](prefill_decode/prefill_decode_visual.html) · [校验脚本](prefill_decode/prefill_decode_validate.py)） — 从一个具体例子出发，标注每一步的矩阵形状与计算量，从 compute-bound vs memory-bound 的根本差异推导出所有优化方向的必然性。
@@ -81,7 +91,7 @@
 企业级落地需要参考架构与运维方案。
 
 - **[推理优化参考设计](reference_design/README.md)** — 14 篇系列文章：背景目标、集群规模分类、技术选型、架构设计、性能评估、实施检查清单。
-- **[模型部署](deployment/README.md)** — DeepSeek-V3 H20、Qwen2-VL 昇腾的方案与 SLO 验证，以及基于 logprobs 的输出精度判别与排错方法论。
+- **[模型部署](deployment/README.md)** — DeepSeek-V3 H20、Qwen2-VL 昇腾、B300 部署配方与 KV Cache 实践三套方案，以及基于 logprobs 的输出精度判别与排错方法论。
 
 ---
 
