@@ -38,26 +38,26 @@ $font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --text-heading:      #f0f6fc;
   --text-muted:        #8b949e;
   --text-faint:        #6e7681;
-  --text-link:         $dell-light;
+  --text-link:         #{$dell-light};
   --text-link-hover:   #9fe0ff;
   --text-link-visited: #8fc8e8;
   --text-code:         #7ee0ff;
   --text-strong:       #f0f6fc;
 
   // Accent
-  --accent:            $dell-light;
-  --accent-blue:       $dell-blue;
-  --accent-deep:       $dell-navy;
+  --accent:            #{$dell-light};
+  --accent-blue:       #{$dell-blue};
+  --accent-deep:       #{$dell-navy};
   // text/icon color that sits on top of --accent backgrounds
   --accent-contrast:   #001A3A;
 
   // Buttons
-  --btn-solid-bg:      $dell-blue;
+  --btn-solid-bg:      #{$dell-blue};
   --btn-solid-text:    #fff;
-  --btn-outline-text:  $dell-light;
+  --btn-outline-text:  #{$dell-light};
   --btn-outline-border:#30363d;
   --btn-outline-hover-bg: #21262d;
-  --btn-outline-hover-border: $dell-light;
+  --btn-outline-hover-border: #{$dell-light};
 
   // Tags
   --tag-bg:            #21262d;
@@ -78,7 +78,7 @@ $font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --term-prompt:       #28c840;
   --term-cmd:          #f0f6fc;
   --term-out:          #7ee0ff;
-  --term-cursor:       $dell-light;
+  --term-cursor:       #{$dell-light};
   --term-dot-red:      #ff5f57;
   --term-dot-yellow:   #febc2e;
   --term-dot-green:    #28c840;
@@ -111,7 +111,7 @@ $font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   // Scrollbar
   --scrollbar-track:   #161b22;
   --scrollbar-thumb:   #30363d;
-  --scrollbar-thumb-hover: $dell-blue;
+  --scrollbar-thumb-hover: #{$dell-blue};
 
   // Search highlight
   --search-hi-bg:      #0d419d;
@@ -120,7 +120,7 @@ $font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   // Nav
   --nav-shadow:        rgba(0,0,0,.45);
   --nav-logo-border:   #30363d;
-  --nav-brand:         $dell-light;
+  --nav-brand:         #{$dell-light};
 
   // Mermaid background (used when mermaid theme != dark)
   --mermaid-bg:        #161b22;
@@ -134,10 +134,10 @@ $font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --blockquote-warn-bg:     #2a1616;
 
   // HR diamond
-  --hr-diamond-color:  $dell-light;
+  --hr-diamond-color:  #{$dell-light};
 
   // List marker
-  --list-marker:       $dell-blue;
+  --list-marker:       #{$dell-blue};
 }
 
 // ═══════════════════════════════════════════════════════
